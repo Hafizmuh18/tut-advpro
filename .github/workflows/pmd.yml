@@ -31,7 +31,6 @@ jobs:
           rulesets: 'rulesets/java/quickstart.xml'
           analyzeModifiedFilesOnly: false
 
-
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v3
         with:
