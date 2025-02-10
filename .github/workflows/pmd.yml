@@ -22,7 +22,7 @@ jobs:
           cache: 'gradle'
 
       - name: Run PMD
-        uses: pmd/pmd-github-action@v1
+        uses: pmd/pmd-github-action@v2
         with:
           version: '7.0.0-rc4'
           sourcePath: 'src/main/java'
