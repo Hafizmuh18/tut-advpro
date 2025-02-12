@@ -43,7 +43,7 @@ public class ProductController {
         return "redirect:list";
     }
 
-    @GetMapping("/update/{id}")
+    @GetMapping("/edit/{id}")
     public String updateProduct(@PathVariable String id, Model model) {
         List<Product> allProducts = service.findAll();
         for(Product product : allProducts){
@@ -55,7 +55,7 @@ public class ProductController {
         return "redirect:list";
     }
 
-    @PostMapping("/update")
+    @PostMapping("/edit")
     public String updateProductPost(@ModelAttribute Product product, Model model) {
         service.update(product);
         return "redirect:list";
