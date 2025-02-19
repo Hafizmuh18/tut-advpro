@@ -2,7 +2,9 @@ name: SonarCloud analysis
 
 on:
   push:
+    branches: [ "main" ]
   pull_request:
+    branches: [ "main" ]
   workflow_dispatch:
 
 permissions:
@@ -13,23 +15,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out the Git repository
-        uses: actions/checkout@v4
-
-      - name: Download JaCoCo coverage report
-        uses: actions/download-artifact@v4
-        with:
-          name: jacoco-report
-
-      - name: List downloaded JaCoCo files (for debugging)
-        run: ls -R jacoco-report || echo "JaCoCo report not downloaded!"
-
       - name: Analyze with SonarCloud
         uses: SonarSource/sonarcloud-github-action@4006f663ecaf1f8093e8e4abb9227f6041f52216
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
-          args: >
+          args:
             -Dsonar.projectKey=Hafizmuh18_tut-advpro
             -Dsonar.organization=hafizmuh18
-            -Dsonar.coverage.jacoco.xmlReportPaths=jacoco-report/jacocoTestReport.xml
+          projectBaseDir: .
