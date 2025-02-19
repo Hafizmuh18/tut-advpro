@@ -21,8 +21,7 @@ jobs:
         with:
           name: jacoco-report
 
-      - name:
-        Debug: List downloaded JaCoCo files
+      - name: List downloaded JaCoCo files (for debugging)
         run: ls -R jacoco-report || echo "JaCoCo report not downloaded!"
 
       - name: Analyze with SonarCloud
