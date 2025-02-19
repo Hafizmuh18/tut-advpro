@@ -34,7 +34,7 @@ public class ProductController {
     public String productListProducts(Model model) {
         List<Product> allProducts = service.findAll();
         model.addAttribute("products", allProducts);
-        return "ProductList";
+        return "productList";
     }
 
     @PostMapping("/delete")
