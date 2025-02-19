@@ -25,6 +25,9 @@ jobs:
       - name: Run unit tests with coverage
         run: ./gradlew test jacocoTestReport
 
+      - name: Debug: List JaCoCo report files
+        run: ls -R build/reports/jacoco/test || echo "JaCoCo report not found!"
+
       - name: Upload JaCoCo coverage report
         uses: actions/upload-artifact@v4
         with:
