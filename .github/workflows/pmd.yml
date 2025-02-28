@@ -2,9 +2,7 @@ name: PMD
 
 on:
   push:
-    branches: [ "main" ]
   pull_request:
-    branches: [ "main" ]
 
 jobs:
   pmd:
@@ -35,4 +33,3 @@ jobs:
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: pmd-report.sarif
-          name: PMD_Report  # Fixed name

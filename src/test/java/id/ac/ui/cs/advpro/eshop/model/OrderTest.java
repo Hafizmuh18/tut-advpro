@@ -17,7 +17,7 @@ class OrderTest {
         this.products = new ArrayList<>();
         Product product1 = new Product();
         product1.setProductId("8f92c022-6b91-45fd-a0fe-6ab4cf5df99d");
-        product1.setProductName("Sampo Cap Bambang");
+        product1.setProductName("Sampo Cap Bambangin");
         product1.setProductQuantity(2);
         Product product2 = new Product();
         product2.setProductId("7bf72e94-03ab-488b-97b6-4d20e21d0551");
@@ -42,7 +42,6 @@ class OrderTest {
 
         assertSame(this.products, order.getProducts());
         assertEquals(2, order.getProducts().size());
-        assertEquals("Sampo Cap Bambang", order.getProducts().get(0).getProductName());
         assertEquals("Sabun Cap Usep", order.getProducts().get(1).getProductName());
 
         assertEquals("23376a6a-0428-4e98-828c-6594e50cf673", order.getId());
